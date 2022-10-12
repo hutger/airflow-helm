@@ -1,0 +1,73 @@
+---
+postgresql:
+  primary:
+    persistence:
+      existingClaim: ""
+  livenessProbe:
+    initialDelaySeconds: 200
+    initialDelaySeconds: 200
+  volumePermissions:
+    enabled: true
+  global:
+    postgresql:
+      auth:
+        postgresPassword: "airflow"
+        username: "airflow"
+        password: secrets
+        database: "airflow"
+        # existingSecret: secrets
+
+
+airflow:
+  auth:
+    username: airflow
+    password: secrets
+
+  dags:
+    image:
+      registry: docker.io
+      repository: bitnami/bitnami-shell
+      tag: 11-debian-11-r34
+      digest: ""
+      pullPolicy: IfNotPresent
+  git:
+    image:
+      registry: docker.io
+      tag: 2.37.3-debian-11-r4
+      digest: ""
+      pullPolicy: IfNotPresent
+    dags:
+      enabled: true
+      repositories:
+        - repository: "https://github.com/hutger/airflow-helm.git"
+          branch: "main"
+          name: "iff"
+          path: "DAGs"
+
+  executor: LocalExecutor
+
+  externalDatabase:
+    host: airflow-postgresql
+    port: 5432
+    user: airflow
+    database: airflow
+    existingSecret: secrets
+
+  logs.persistence.enabled: true
+  logs.persistence.existingClaim: "logs"
+
+
+  ingress:
+    enabled: true
+    hostname: airflow.lucasalbuq.co
+
+  serviceAccount:
+    create: true
+    name: "airflow"
+    automountServiceAccountToken: true
+
+  redis:
+    enabled: false
+
+  postgresql:
+    enabled: false

@@ -1,0 +1,11 @@
+apiVersion: v2
+name: airflow
+version: 1.0.0
+dependencies:
+  - name: postgresql
+    version: 11.9.5
+    repository: https://charts.bitnami.com/bitnami
+
+  - name: airflow
+    version: 13.1.6
+    repository: https://charts.bitnami.com/bitnami
