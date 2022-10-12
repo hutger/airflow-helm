@@ -41,8 +41,8 @@ airflow:
       repositories:
         - repository: "https://github.com/hutger/airflow-helm.git"
           branch: "main"
-          name: "iff"
-          path: "DAGs"
+          name: "dags"
+          path: ""
 
   executor: LocalExecutor
 
@@ -51,7 +51,7 @@ airflow:
     port: 5432
     user: airflow
     database: airflow
-    existingSecret: secrets
+    # existingSecret: secrets
 
   logs.persistence.enabled: true
   logs.persistence.existingClaim: "logs"
