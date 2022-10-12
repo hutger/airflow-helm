@@ -60,6 +60,7 @@ airflow:
 
   ingress:
     enabled: true
+    ingressClassName: nginx
     hostname: airflow.lucasalbuq.co
 
   serviceAccount:
