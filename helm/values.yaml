@@ -59,7 +59,7 @@ airflow:
 
 
   ingress:
-    enabled: true
+    enabled: false
     ingressClassName: nginx
     hostname: airflow.lucasalbuq.co
 
