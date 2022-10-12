@@ -13,7 +13,7 @@ postgresql:
       auth:
         postgresPassword: "airflow"
         username: "airflow"
-        password: secrets
+        password: airflow
         database: "airflow"
         # existingSecret: secrets
 
