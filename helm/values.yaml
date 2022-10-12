@@ -41,8 +41,8 @@ airflow:
       repositories:
         - repository: "https://github.com/hutger/airflow-helm.git"
           branch: "main"
-          name: "dags"
-          path: ""
+          name: "iff"
+          path: "/dags"
 
   executor: LocalExecutor
 
