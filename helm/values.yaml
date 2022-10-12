@@ -51,7 +51,7 @@ airflow:
     port: 5432
     user: airflow
     database: airflow
-    password: airflow
+    password: secrets
     # existingSecret: secrets
 
   logs.persistence.enabled: true
