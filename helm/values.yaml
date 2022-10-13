@@ -11,11 +11,13 @@ postgresql:
   global:
     postgresql:
       auth:
-        postgresPassword: "airflow"
         username: "airflow"
-        password: "airflow"
         database: "airflow"
-        # existingSecret: secrets
+        existingSecret: "pgsql-secrets"
+        secretKeys:
+          adminPasswordKey: adminPasswordKey
+          userPasswordKey: userPasswordKey
+          replicationPasswordKey: replicationPasswordKey
 
 
 airflow:
@@ -51,8 +53,8 @@ airflow:
     port: 5432
     user: airflow
     database: airflow
-    password: secrets
-    # existingSecret: secrets
+    existingSecret: airflow-secrets
+    existingSecretPasswordKey: postgresql-password
 
   logs.persistence.enabled: true
   logs.persistence.existingClaim: "logs"
