@@ -8,16 +8,14 @@ postgresql:
     initialDelaySeconds: 200
   volumePermissions:
     enabled: true
-  global:
-    postgresql:
-      auth:
-        username: "airflow"
-        database: "airflow"
-        existingSecret: "pgsql-secrets"
-        secretKeys:
-          adminPasswordKey: adminPasswordKey
-          userPasswordKey: userPasswordKey
-          replicationPasswordKey: replicationPasswordKey
+  auth:
+    username: "airflow"
+    database: "airflow"
+    existingSecret: "pgsql-secrets"
+    secretKeys:
+      adminPasswordKey: adminPasswordKey
+      userPasswordKey: userPasswordKey
+      replicationPasswordKey: replicationPasswordKey
 
 
 airflow:
