@@ -29,8 +29,8 @@ postgresql:
 
 airflow:
   auth:
-    username: admin
-    password: admin123
+    username: airflow
+    password: airflow
     # existingSecret: airflow-secrets
 
   dags:
