@@ -30,6 +30,7 @@ postgresql:
 airflow:
   auth:
     username: airflow
+    password: ""
 
   dags:
     image:
