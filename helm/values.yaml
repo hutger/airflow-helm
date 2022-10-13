@@ -23,7 +23,6 @@ postgresql:
 airflow:
   auth:
     username: airflow
-    password: secrets
 
   dags:
     image:
