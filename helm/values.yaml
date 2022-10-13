@@ -14,14 +14,18 @@ postgresql:
         username: "airflow"
         database: "airflow"
         existingSecret: pgsql-secrets
-  auth:
-    username: "airflow"
-    database: "airflow"
-    existingSecret: pgsql-secrets
-    # secretKeys:
-    #   adminPasswordKey: postgres-password
-    #   userPasswordKey: password
-    #   replicationPasswordKey: replication-password
+        # secretKeys:
+        #   adminPasswordKey: postgres-password
+        #   userPasswordKey: password
+        #   replicationPasswordKey: replication-password
+  # auth:
+  #   username: "airflow"
+  #   database: "airflow"
+  #   existingSecret: pgsql-secrets
+  #   secretKeys:
+  #     adminPasswordKey: postgres-password
+  #     userPasswordKey: password
+  #     replicationPasswordKey: replication-password
 
 airflow:
   auth:
@@ -64,8 +68,8 @@ airflow:
 
   ingress:
     enabled: false
-    ingressClassName: nginx
-    hostname: airflow.lucasalbuq.co
+    # ingressClassName: nginx
+    # hostname: airflow.lucasalbuq.co
 
   serviceAccount:
     create: true
