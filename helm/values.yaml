@@ -11,12 +11,11 @@ postgresql:
   auth:
     username: "airflow"
     database: "airflow"
-    existingSecret: "pgsql-secrets"
+    existingSecret: pgsql-secrets
     secretKeys:
-      adminPasswordKey: adminPasswordKey
-      userPasswordKey: userPasswordKey
-      replicationPasswordKey: replicationPasswordKey
-
+      adminPasswordKey: postgres-password
+      userPasswordKey: password
+      replicationPasswordKey: replication-password
 
 airflow:
   auth:
