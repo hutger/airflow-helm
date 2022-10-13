@@ -8,6 +8,12 @@ postgresql:
     initialDelaySeconds: 200
   volumePermissions:
     enabled: true
+  global:
+    postgresql:
+      auth:
+        username: "airflow"
+        database: "airflow"
+        existingSecret: pgsql-secrets
   auth:
     username: "airflow"
     database: "airflow"
