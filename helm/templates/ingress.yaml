@@ -1,18 +1,18 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: airflow
-  namespace: airflow
-spec:
-  ingressClassName: nginx
-  rules:
-  - host:  airflow.lucasalbuq.co
-    http:
-      paths:
-      - backend:
-          service:
-            name: airflow
-            port:
-              number: 8080
-        path: /
-        pathType: ImplementationSpecific
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: airflow
+#   namespace: airflow
+# spec:
+#   ingressClassName: nginx
+#   rules:
+#   - host:  airflow.lucasalbuq.co
+#     http:
+#       paths:
+#       - backend:
+#           service:
+#             name: airflow
+#             port:
+#               number: 8080
+#         path: /
+#         pathType: ImplementationSpecific

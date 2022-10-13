@@ -68,9 +68,9 @@ airflow:
 
 
   ingress:
-    enabled: false
-    # ingressClassName: nginx
-    # hostname: airflow.lucasalbuq.co
+    enabled: true
+    ingressClassName: nginx
+    hostname: airflow.lucasalbuq.co
 
   serviceAccount:
     create: true
