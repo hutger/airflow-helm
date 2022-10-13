@@ -73,3 +73,6 @@ airflow:
 
   postgresql:
     enabled: false
+
+  rbac:
+    create: true
