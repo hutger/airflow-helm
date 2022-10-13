@@ -30,7 +30,7 @@ postgresql:
 airflow:
   auth:
     username: airflow
-    existingSecret: airflow-secrets
+    # existingSecret: airflow-secrets
 
   dags:
     image:
