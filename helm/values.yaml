@@ -57,12 +57,23 @@ airflow:
   extraVolumes:
     - name: requirements
       configMap:
-        name: requirements
+        name: airflow-requirements
   extraVolumeMounts:
     - name: requirements
       mountPath: /bitnami/python/requirements.txt
       subPath: requirements.txt
   executor: LocalExecutor
+
+  extraDeploy:
+    - apiVersion: v1
+      kind: ConfigMap
+      metadata:
+        name: airflow-requirements
+      data:
+        requirements.txt: |
+          pymssql
+          apache-airflow-providers-microsoft-mssql
+          pyodbc
 
   externalDatabase:
     host: airflow-postgresql
