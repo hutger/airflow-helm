@@ -54,7 +54,14 @@ airflow:
           branch: "main"
           name: "iff"
           path: ""
-
+  extraVolumes:
+    - name: requirements
+      configMap:
+        name: requirements
+  extraVolumeMounts:
+    - name: requirements
+      mountPath: /bitnami/python/requirements.txt
+      subPath: requirements.txt
   executor: LocalExecutor
 
   externalDatabase:
