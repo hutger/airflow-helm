@@ -32,7 +32,7 @@ with DAG(
     start_date=pendulum.datetime(2021, 1, 1, tz="UTC"),
     catchup=False,
     tags=["example"],
-    schedule="@daily",
+    schedule_interval="@daily",
 ) as dag:
     # [START howto_operator_day_of_week_branch]
     empty_task_1 = EmptyOperator(task_id='branch_true')
